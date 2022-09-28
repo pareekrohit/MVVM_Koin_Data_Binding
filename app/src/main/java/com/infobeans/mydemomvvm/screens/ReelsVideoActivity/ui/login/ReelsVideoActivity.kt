@@ -14,9 +14,9 @@ import android.widget.EditText
 import android.widget.Toast
 import com.infobeans.mydemomvvm.R
 import com.infobeans.mydemomvvm.databinding.ActivityReelsVideoBinding
-import com.infobeans.mydemomvvm.screens.ReelsVideoActivity.databinding.ActivityReelsVideoBinding
+/*import com.infobeans.mydemomvvm.screens.ReelsVideoActivity.databinding.ActivityReelsVideoBinding*/
 
-import com.infobeans.mydemomvvm.screens.ReelsVideoActivity.R
+/*import com.infobeans.mydemomvvm.screens.ReelsVideoActivity.R*/
 
 class ReelsVideoActivity : AppCompatActivity() {
 
@@ -37,7 +37,7 @@ class ReelsVideoActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
 
-        loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
+        loginViewModel.loginFormState.observe(this, Observer {
             val loginState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
@@ -51,7 +51,7 @@ class ReelsVideoActivity : AppCompatActivity() {
             }
         })
 
-        loginViewModel.loginResult.observe(this@LoginActivity, Observer {
+        loginViewModel.loginResult.observe(this, Observer {
             val loginResult = it ?: return@Observer
 
             loading.visibility = View.GONE
